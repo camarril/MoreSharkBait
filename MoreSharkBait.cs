@@ -6,7 +6,7 @@ using System.Linq;
 [ModIconUrl("https://raw.githubusercontent.com/camarril/MoreSharkBait/master/Thumbnail.png")] 
 [ModWallpaperUrl("https://raw.githubusercontent.com/camarril/MoreSharkBait/master/Banner.jpg")] 
 [ModVersionCheckUrl("https://raftmodding.com/api/v1/mods/moresharkbait/version.txt")] 
-[ModVersion("1.0")] 
+[ModVersion("v1.0")] 
 [RaftVersion("Update 10.06 (4473383)")] 
 [ModIsPermanent(false)] 
 public class MoreSharkBait : Mod
