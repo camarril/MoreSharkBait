@@ -3,10 +3,10 @@ using System.Linq;
 [ModTitle("MoreSharkBait")] 
 [ModDescription("Use all fish as shark bait")] 
 [ModAuthor("camarril")] 
-[ModIconUrl("https://raw.githubusercontent.com/camarril/MoreSharkBait/master/Thumbnail.png")] 
+[ModIconUrl("https://raw.githubusercontent.com/camarril/MoreSharkBait/master/Thumbnail.jpg")] 
 [ModWallpaperUrl("https://raw.githubusercontent.com/camarril/MoreSharkBait/master/Banner.jpg")] 
 [ModVersionCheckUrl("https://raftmodding.com/api/v1/mods/moresharkbait/version.txt")] 
-[ModVersion("v1.0")] 
+[ModVersion("v1.1")] 
 [RaftVersion("Update 10.06 (4473383)")] 
 [ModIsPermanent(false)] 
 public class MoreSharkBait : Mod
