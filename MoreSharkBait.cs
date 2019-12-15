@@ -1,4 +1,4 @@
-using UnityEngine;
+using System.Linq;
 
 [ModTitle("MoreSharkBait")] 
 [ModDescription("Use all fish as shark bait")] 
@@ -10,19 +10,28 @@ using UnityEngine;
 [RaftVersion("Update 10.06 (4473383)")] 
 [ModIsPermanent(false)] 
 public class MoreSharkBait : Mod
-{    
+{
     public void Start()
     {
         RConsole.Log("MoreSharkBait has been loaded!");
+        allowItems("Raw_Herring", "Raw_Pomfret", "Raw_Mackerel", "Raw_Tilapia", "Raw_Catfish", "Raw_Salmon");
     }
 
-    public void Update()
+    private void allowItems(params string[] validItemNames)
     {
-        
+        var ropeItem = ItemManager.GetItemByName("Rope");
+        var ropeIngredient = new CostMultiple(new Item_Base[] { ropeItem }, 2);
+
+        var validItems = validItemNames.Select(name => ItemManager.GetItemByName(name)).ToArray();
+        var validIngredients = new CostMultiple(validItems, 2);
+
+        var bait = ItemManager.GetItemByName("SharkBait");
+        bait.settings_recipe.NewCost = new CostMultiple[] { ropeIngredient, validIngredients };
     }
     
     public void OnModUnload()
     {
+        allowItems("Raw_Herring", "Raw_Pomfret");
         RConsole.Log("MoreSharkBait has been unloaded!");
         Destroy(gameObject); 
     }
